@@ -1,12 +1,12 @@
-import { createStore } from "redux";
-import allreducers from "./reducers";
-import { persistStore, persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import { createStore } from 'redux';
+import allreducers from './reducers';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 const persistConfig = {
-    key: "root",
+    key: 'root',
     storage,
-    whitelist: ["counter"],
+    whitelist: ['counter'],
 };
 
 const persistedReducer = persistReducer(persistConfig, allreducers);

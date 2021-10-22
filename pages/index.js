@@ -1,7 +1,8 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
-import { useSelector, useDispatch } from "react-redux";
-import { increment, decrement } from "../redux/actions";
+import Head from 'next/head';
+import styles from '../styles/Home.module.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { increment, decrement } from '../redux/actions';
+import Link from 'next/link';
 
 export default function Home() {
     const count = useSelector((state) => state.counter);
@@ -19,11 +20,22 @@ export default function Home() {
             </Head>
 
             <div>
+                <Link href="/pdf-viewer">View Pdf</Link>
                 <h1> Counter</h1>
                 <h2>{count}</h2>
-                <div>
-                    <button onClick={() => dispatch(increment())}>+</button>
-                    <button onClick={() => dispatch(decrement())}>-</button>
+                <div className="btn-group">
+                    <button
+                        className="btn btn-primary"
+                        onClick={() => dispatch(increment())}
+                    >
+                        +
+                    </button>
+                    <button
+                        className="btn btn-primary"
+                        onClick={() => dispatch(decrement())}
+                    >
+                        -
+                    </button>
                 </div>
             </div>
         </div>
